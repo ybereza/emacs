@@ -22,7 +22,7 @@
 (require 'savehist)
 (require 'recentf)
 (setq recentf-max-menu-items 25)
-(savehist-load)
+;;(savehist-load)
 (recentf-mode 1)
 
 ;;Temporary Files
@@ -38,10 +38,12 @@
 (make-directory user-temporary-file-directory t)
 
 ;;Autocomplete
-(require 'auto-complete-config)
-(setq ac-auto-start t)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
+;; (require 'auto-complete-config)
+;; (setq ac-auto-start t)
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;; (ac-config-default)
+
+(require 'auto-complete)
 
 ;;Defaults
 (setq user-full-name "Y.Bereza")
@@ -77,11 +79,22 @@
 (abbrev-mode)
 (menu-bar-mode 0)
 (blink-cursor-mode t)
+(auto-complete-mode t)
 (global-font-lock-mode 0)
 
-(load "~/.emacs.d/rc/emacs-rc-ccmode.el")
-(load "~/.emacs.d/rc/emacs-rc-cmake.el")
-(load "~/.emacs.d/rc/emacs-rc-python.el")
+(load "~/emacs/rc/emacs-rc-ccmode.el")
+(load "~/emacs/rc/emacs-rc-cmake.el")
+(load "~/emacs/rc/emacs-rc-python.el")
 
 (custom-set-faces
- '(minibuffer-prompt ((t (:foreground "blue")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(minibuffer-prompt ((t (:foreground "white")))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(auto-complete cmake-mode)))
