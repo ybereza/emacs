@@ -80,7 +80,9 @@
 (menu-bar-mode 0)
 (blink-cursor-mode t)
 (auto-complete-mode t)
-(global-font-lock-mode 0)
+(global-font-lock-mode t)
+(global-auto-complete-mode t)
+(global-display-line-numbers-mode t)
 
 (load "~/emacs/rc/emacs-rc-ccmode.el")
 (load "~/emacs/rc/emacs-rc-cmake.el")
@@ -91,10 +93,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(minibuffer-prompt ((t (:foreground "white")))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(auto-complete cmake-mode)))
+ '(minibuffer-prompt ((t (:foreground "default")))))
