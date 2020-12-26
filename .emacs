@@ -3,7 +3,7 @@
     (scroll-bar-mode -1)
     (tool-bar-mode -1)
     (when (eq system-type 'windows-nt)
-    (set-face-attribute 'default nil :font "Consolas-11"))
+    (set-face-attribute 'default nil :font "Consolas-12"))
     (when (eq system-type 'darwin)
       (setq mac-command-modifier 'meta)
       (setq mac-option-modifier 'meta)
@@ -45,8 +45,12 @@
 
 (require 'auto-complete)
 
+;;system clipboard. use shift-insert to paste from windows/mac clipboard
+(require 'simpleclip)
+(simpleclip-mode 1)
+
 ;;Defaults
-(setq user-full-name "Y.Bereza")
+(setq user-full-name "Yury Bereza")
 (setq user-mail-address "ybereza@gmail.com")
 
 (setq frame-title-format "emacs - %b")
@@ -66,6 +70,8 @@
 (setq scroll-down-aggressively 0.01)
 (setq kill-whole-line t)
 (setq indent-tabs-mode nil)
+(setq ring-bell-function 'ignore)
+
 (put 'eval-expression 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
@@ -94,3 +100,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(minibuffer-prompt ((t (:foreground "default")))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (simpleclip sml-mode scala-mode omnisharp neotree monokai-theme markdown-mode lua-mode json-mode gradle-mode go-mode es-windows es-lib color-theme-sanityinc-solarized cmake-mode))))
