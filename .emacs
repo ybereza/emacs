@@ -77,6 +77,7 @@
 (put 'set-goal-column 'disabled nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(auto-revert-mode t)
 (column-number-mode)
 (ffap-bindings)
 (transient-mark-mode)
@@ -85,7 +86,7 @@
 (abbrev-mode)
 (menu-bar-mode 0)
 (blink-cursor-mode t)
-(auto-complete-mode t)
+(auto-complete-mode 0)
 (global-font-lock-mode t)
 (global-auto-complete-mode t)
 (global-display-line-numbers-mode t)
