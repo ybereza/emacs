@@ -3,7 +3,7 @@
     (scroll-bar-mode -1)
     (tool-bar-mode -1)
     (when (eq system-type 'windows-nt)
-    (set-face-attribute 'default nil :font "Consolas-12"))
+    (set-face-attribute 'default nil :font "JetBrains Mono-12"))
     (when (eq system-type 'darwin)
       (setq mac-command-modifier 'meta)
       (setq mac-option-modifier 'meta)
