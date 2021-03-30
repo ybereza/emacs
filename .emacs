@@ -18,6 +18,10 @@
                '("melpa" . "https://melpa.org/packages/"))
   (package-initialize))
 
+;;Local packages
+(let ((default-directory "~/emacs/packages/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
 ;;History
 (require 'savehist)
 (require 'recentf)
@@ -48,6 +52,11 @@
 ;;system clipboard. use shift-insert to paste from windows/mac clipboard
 (require 'simpleclip)
 (simpleclip-mode 1)
+
+;;keybindings for simpleclip
+(global-set-key (kbd "C-C C-w") 'simpleclip-cup)
+(global-set-key (kbd "C-C M-w") 'simpleclip-copy)
+(global-set-key (kbd "C-C C-y") 'simpleclip-paste)
 
 ;;Defaults
 (setq user-full-name "Yury Bereza")
@@ -107,3 +116,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages (quote (simpleclip cmake-mode auto-complete))))
+(put 'dired-find-alternate-file 'disabled nil)
