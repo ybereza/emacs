@@ -94,6 +94,7 @@
 (global-font-lock-mode t)
 (global-auto-complete-mode 0)
 (global-display-line-numbers-mode t)
+(windmove-default-keybindings)
 
 (load "~/emacs/rc/emacs-rc-ccmode.el")
 (load "~/emacs/rc/emacs-rc-cmake.el")
