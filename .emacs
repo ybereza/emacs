@@ -53,11 +53,6 @@
 (require 'simpleclip)
 (simpleclip-mode 1)
 
-;;keybindings for simpleclip
-(global-set-key (kbd "C-C C-w") 'simpleclip-cup)
-(global-set-key (kbd "C-C M-w") 'simpleclip-copy)
-(global-set-key (kbd "C-C C-y") 'simpleclip-paste)
-
 ;;Defaults
 (setq user-full-name "Yury Bereza")
 (setq user-mail-address "ybereza@gmail.com")
@@ -103,6 +98,17 @@
 (load "~/emacs/rc/emacs-rc-ccmode.el")
 (load "~/emacs/rc/emacs-rc-cmake.el")
 (load "~/emacs/rc/emacs-rc-python.el")
+
+;;Keybindings
+;;Simpleclip keybinding
+(global-set-key (kbd "C-C C-w") 'simpleclip-cup)
+(global-set-key (kbd "C-C M-w") 'simpleclip-copy)
+(global-set-key (kbd "C-C C-y") 'simpleclip-paste)
+;;Navigation keybindings
+(global-set-key (kbd "C-C C-l") 'goto-line)
+;;Search
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
