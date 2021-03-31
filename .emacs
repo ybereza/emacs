@@ -109,6 +109,9 @@
 ;;Search
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+;;Comments
+(global-set-key (kbd "C-C C-c") 'comment-region)
+(global-set-key (kbd "C-C C-u") 'uncomment-region)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
