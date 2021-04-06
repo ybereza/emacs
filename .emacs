@@ -106,7 +106,7 @@
 (global-set-key (kbd "C-C M-w") 'simpleclip-copy)
 (global-set-key (kbd "C-C C-y") 'simpleclip-paste)
 ;;Navigation keybindings
-(global-set-key (kbd "C-C C-l") 'goto-line)
+(global-set-key (kbd "C-C C-g") 'goto-line)
 ;;Search
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
@@ -125,5 +125,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (simpleclip cmake-mode auto-complete))))
+ '(package-selected-packages (quote (markdown-mode simpleclip cmake-mode auto-complete))))
 (put 'dired-find-alternate-file 'disabled nil)
