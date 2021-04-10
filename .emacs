@@ -120,11 +120,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(magit-diff-added ((t (:background "blue" :foreground "white"))))
+ '(magit-diff-added-highlight ((t (:background "blue" :foreground "white"))))
+ '(magit-diff-base ((t (:background "magenta" :foreground "white"))))
+ '(magit-diff-base-highlight ((t (:background "magenta" :foreground "white"))))
+ '(magit-diff-removed ((t (:background "magenta" :foreground "white"))))
+ '(magit-diff-removed-highlight ((t (:background "magenta" :foreground "white"))))
  '(minibuffer-prompt ((t (:foreground "default")))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (markdown-mode simpleclip cmake-mode auto-complete))))
+ '(package-selected-packages (quote (magit markdown-mode simpleclip cmake-mode auto-complete))))
 (put 'dired-find-alternate-file 'disabled nil)
