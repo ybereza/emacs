@@ -75,6 +75,7 @@
 (setq kill-whole-line t)
 (setq indent-tabs-mode nil)
 (setq ring-bell-function 'ignore)
+(setq-default truncate-lines t)
 
 (put 'eval-expression 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
