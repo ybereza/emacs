@@ -87,7 +87,7 @@
 (ffap-bindings)
 (transient-mark-mode)
 (show-paren-mode)
-(iswitchb-mode)
+(ido-mode)
 (abbrev-mode)
 (menu-bar-mode 0)
 (blink-cursor-mode t)
