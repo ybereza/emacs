@@ -65,7 +65,7 @@
 (setq suggest-key-bindings nil)
 (setq show-trailing-whitespace nil)
 (setq show-paren-style 'mixed)
-(setq truncate-partial-width-windows nil)
+(setq truncate-partial-width-windows t)
 (setq default-truncate-lines t)
 (setq line-spacing 1)
 (setq default-tab-width 4)
