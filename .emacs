@@ -114,6 +114,8 @@
 ;;Comments
 (global-set-key (kbd "C-C C-c") 'comment-region)
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
+;;Misc
+(global-set-key (kbd "C-C C-SPC") 'global-whitespace-mode)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
