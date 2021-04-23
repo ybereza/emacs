@@ -22,9 +22,9 @@
   (define-key c++-mode-map "\C-d"  'kill-word)
   (define-key c++-mode-map "\C-co" 'ff-find-other-file)
   (c-toggle-electric-state -1)
-  (c-set-offset 'namespace-open  4)
-  (c-set-offset 'namespace-close  4)
-  (c-set-offset 'innamespace 4))
+  (c-set-offset 'namespace-open  0)
+  (c-set-offset 'namespace-close  0)
+  (c-set-offset 'innamespace 0))
 
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
