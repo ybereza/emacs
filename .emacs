@@ -93,7 +93,7 @@
 (blink-cursor-mode t)
 (auto-complete-mode 0)
 (global-font-lock-mode t)
-(global-auto-complete-mode 0)
+(global-auto-complete-mode t)
 (global-display-line-numbers-mode t)
 (windmove-default-keybindings)
 
@@ -125,12 +125,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(magit-diff-added ((t (:background "blue" :foreground "white"))))
- '(magit-diff-added-highlight ((t (:background "blue" :foreground "white"))))
+ '(magit-diff-added ((t (:background "skyblue" :foreground "black"))))
+ '(magit-diff-added-highlight ((t (:background "skyblue" :foreground "black"))))
  '(magit-diff-base ((t (:background "magenta" :foreground "white"))))
  '(magit-diff-base-highlight ((t (:background "magenta" :foreground "white"))))
- '(magit-diff-removed ((t (:background "magenta" :foreground "white"))))
- '(magit-diff-removed-highlight ((t (:background "magenta" :foreground "white"))))
+ '(magit-diff-removed ((t (:background "hotpink" :foreground "black"))))
+ '(magit-diff-removed-highlight ((t (:background "hotpink" :foreground "black"))))
  '(minibuffer-prompt ((t (:foreground "default")))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
