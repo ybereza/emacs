@@ -82,7 +82,7 @@
 (put 'set-goal-column 'disabled nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(auto-revert-mode t)
+(global-auto-revert-mode t)
 (column-number-mode)
 (ffap-bindings)
 (transient-mark-mode)
