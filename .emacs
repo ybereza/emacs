@@ -3,13 +3,13 @@
     (scroll-bar-mode -1)
     (tool-bar-mode -1)
     (when (eq system-type 'windows-nt)
-    (set-face-attribute 'default nil :font "JetBrains Mono-12"))
+    (set-face-attribute 'default nil :font "JetBrains Mono-14"))
     (when (eq system-type 'darwin)
-      (setq mac-command-modifier 'meta)
+      (setq mac-command-modifier 'control)
       (setq mac-option-modifier 'meta)
-    (set-face-attribute 'default nil :font "Fira Code-14"))
+    (set-face-attribute 'default nil :font "JetBrains Mono-16"))
     (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'default nil :font "JetBrains Mono-12"))))
+      (set-face-attribute 'default nil :font "JetBrains Mono-14"))))
 
 ;;Packages repos
 (when (>= emacs-major-version 24)
@@ -69,12 +69,15 @@
 (setq default-truncate-lines t)
 (setq line-spacing 1)
 (setq default-tab-width 4)
+(setq tab-width 4)
 (setq left-fringe-width 0)
 (setq scroll-up-aggressively 0.01)
 (setq scroll-down-aggressively 0.01)
 (setq kill-whole-line t)
 (setq indent-tabs-mode nil)
 (setq ring-bell-function 'ignore)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
 (setq-default truncate-lines t)
 
 (put 'eval-expression 'disabled nil)
@@ -109,6 +112,7 @@
 (global-set-key (kbd "C-C C-y") 'simpleclip-paste)
 ;;Navigation keybindings
 (global-set-key (kbd "C-C C-g") 'goto-line)
+(global-set-key (kbd "M-z") 'visual-line-mode)
 ;;Search
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
@@ -117,18 +121,26 @@
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
 ;;Misc
 (global-set-key (kbd "C-C C-SPC") 'global-whitespace-mode)
-
+(global-set-key (kbd "C-c z") 'show-file-name)
+;;Switch windows
+(global-set-key [M-left] 'windmove-left)
+(global-set-key [M-right] 'windmove-right)
+(global-set-key [M-up] 'windmove-up)
+(global-set-key [M-down] 'windmove-down)
 ;;theme
-(load-theme 'solarized-light-high-contrast t)
+;;(load-theme 'solarized-light-high-contrast t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(custom-safe-themes
+   '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
  '(package-selected-packages
-   (quote
-    (solarized-theme magit markdown-mode simpleclip cmake-mode auto-complete)))
+   '(systemd lua-mode docker-compose-mode dockerfile-mode solarized-theme magit markdown-mode simpleclip cmake-mode auto-complete))
  '(solarized-high-contrast-mode-line t))
 (put 'dired-find-alternate-file 'disabled nil)
 (custom-set-faces
