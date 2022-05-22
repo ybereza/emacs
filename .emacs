@@ -1,16 +1,3 @@
-(when (fboundp 'window-system)
-  (when (window-system)
-    (scroll-bar-mode -1)
-    (tool-bar-mode -1)
-    (when (eq system-type 'windows-nt)
-    (set-face-attribute 'default nil :font "JetBrains Mono-14"))
-    (when (eq system-type 'darwin)
-      (setq mac-command-modifier 'control)
-      (setq mac-option-modifier 'meta)
-    (set-face-attribute 'default nil :font "JetBrains Mono-16"))
-    (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'default nil :font "JetBrains Mono-14"))))
-
 ;;Packages repos
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -42,12 +29,7 @@
 (make-directory user-temporary-file-directory t)
 
 ;;Autocomplete
-;; (require 'auto-complete-config)
-;; (setq ac-auto-start t)
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-;; (ac-config-default)
-
-(require 'auto-complete)
+;;(require 'auto-complete)
 
 ;;system clipboard. use shift-insert to paste from windows/mac clipboard
 (require 'simpleclip)
@@ -95,8 +77,8 @@
 (menu-bar-mode 0)
 (blink-cursor-mode t)
 (auto-complete-mode 0)
+(global-auto-complete-mode 0)
 (global-font-lock-mode t)
-(global-auto-complete-mode t)
 (global-display-line-numbers-mode t)
 (windmove-default-keybindings)
 
@@ -117,18 +99,32 @@
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 ;;Comments
-(global-set-key (kbd "C-C C-c") 'comment-region)
+(global-set-key (kbd "C-C ;") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
 ;;Misc
 (global-set-key (kbd "C-C C-SPC") 'global-whitespace-mode)
 (global-set-key (kbd "C-c z") 'show-file-name)
+(global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
 ;;Switch windows
 (global-set-key [M-left] 'windmove-left)
 (global-set-key [M-right] 'windmove-right)
 (global-set-key [M-up] 'windmove-up)
 (global-set-key [M-down] 'windmove-down)
-;;theme
-;;(load-theme 'solarized-light-high-contrast t)
+
+;;GUI specific settings
+(when (fboundp 'window-system)
+  (when (window-system)
+    (scroll-bar-mode -1)
+    (tool-bar-mode -1)
+    (when (eq system-type 'windows-nt)
+      (set-face-attribute 'default nil :font "JetBrains Mono-14"))
+    (when (eq system-type 'darwin)
+      (setq mac-command-modifier 'control)
+      (setq mac-option-modifier 'meta)
+      (set-face-attribute 'default nil :font "JetBrains Mono-16"))
+    (when (eq system-type 'gnu/linux)
+      (set-face-attribute 'default nil :font "JetBrains Mono-12")
+      (load-theme 'solarized-light-high-contrast t))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
