@@ -8,5 +8,8 @@
   "Show the full path file name in the minibuffer."
   (interactive)
   (message (buffer-file-name))
-  (kill-new (file-truename buffer-file-name))
-)
+  (kill-new (file-truename buffer-file-name)))
+(defun revert-buffer-no-confirm ()
+    "Revert buffer without confirmation."
+    (interactive)
+    (revert-buffer :ignore-auto :noconfirm))
