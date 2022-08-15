@@ -21,6 +21,8 @@
   (define-key c++-mode-map "\C-m"  'reindent-then-newline-and-indent)
   (define-key c++-mode-map "\C-d"  'kill-word)
   (define-key c++-mode-map "\C-co" 'ff-find-other-file)
+  (define-key c++-mode-map (kbd "C-C C-c") 'comment-or-uncomment-region)
+
   (c-toggle-electric-state -1)
   (c-set-offset 'namespace-open  0)
   (c-set-offset 'namespace-close  0)
