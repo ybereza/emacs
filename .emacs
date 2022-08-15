@@ -103,6 +103,7 @@
 (load "~/emacs/rc/emacs-rc-ccmode.el")
 (load "~/emacs/rc/emacs-rc-cmake.el")
 (load "~/emacs/rc/emacs-rc-python.el")
+(load "~/emacs/rc/emacs-rc-lua.el")
 (load "~/emacs/rc/emacs-rc-custom.el")
 
 ;;Keybindings
@@ -116,6 +117,7 @@
 ;;Search
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-S-s") 'query-replace-regexp)
 ;;Comments
 (global-set-key (kbd "C-C C-c") 'comment-region)
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
@@ -140,7 +142,7 @@
  '(custom-safe-themes
    '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
  '(package-selected-packages
-   '(systemd lua-mode docker-compose-mode dockerfile-mode solarized-theme magit markdown-mode simpleclip cmake-mode auto-complete))
+   '(ein python-black systemd lua-mode docker-compose-mode dockerfile-mode solarized-theme magit markdown-mode simpleclip cmake-mode auto-complete))
  '(solarized-high-contrast-mode-line t))
 (put 'dired-find-alternate-file 'disabled nil)
 (custom-set-faces
