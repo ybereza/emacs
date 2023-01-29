@@ -76,8 +76,8 @@
 (abbrev-mode)
 (menu-bar-mode 0)
 (blink-cursor-mode t)
-(auto-complete-mode 0)
-(global-auto-complete-mode 0)
+;;(auto-complete-mode 0)
+;;(global-auto-complete-mode 0)
 (global-font-lock-mode t)
 (global-display-line-numbers-mode t)
 (windmove-default-keybindings)
@@ -125,7 +125,7 @@
       (setq mac-option-modifier 'meta)
       (set-face-attribute 'default nil :font "JetBrains Mono-16"))
     (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'default nil :font "JetBrains Mono-12")
+      (set-face-attribute 'default nil :font "JetBrains Mono-18")
       (load-theme 'solarized-light-high-contrast t))))
 
 (custom-set-variables

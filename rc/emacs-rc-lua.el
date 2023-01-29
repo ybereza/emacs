@@ -3,7 +3,7 @@
 
 (defun my-lua-mode-hook()
   (setq indent-tabs-mode nil)
-  (setq lua-indent-level 4)
-  (setq tab-width 4))
+  (setq lua-indent-level 2)
+  (setq tab-width 2))
 
 (add-hook 'lua-mode-hook 'my-lua-mode-hook)
