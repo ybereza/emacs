@@ -39,13 +39,16 @@
 (setq user-full-name "Yury Bereza")
 (setq user-mail-address "ybereza@gmail.com")
 
-(setq frame-title-format "emacs - %b")
+(setenv "LANG" "ru_RU.UTF-8")
+
+(setq frame-title-format "%b - %f")
 (setq inhibit-startup-message t)
 (setq mark-even-if-inactive t)
 (setq visible-bell nil)
 (setq next-line-add-newlinens nil)
 (setq suggest-key-bindings nil)
-(setq show-trailing-whitespace nil)
+(setq show-trailing-whitespace t)
+(setq whitespace-line-column 120)
 (setq show-paren-style 'mixed)
 (setq truncate-partial-width-windows t)
 (setq default-truncate-lines t)
@@ -58,9 +61,10 @@
 (setq kill-whole-line t)
 (setq indent-tabs-mode nil)
 (setq ring-bell-function 'ignore)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
 (setq-default truncate-lines t)
+(setq-default magit-log-margin '(t "%Y-%m-%d " magit-log-margin-width t 18))
 
 (put 'eval-expression 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -72,12 +76,12 @@
 (ffap-bindings)
 (transient-mark-mode)
 (show-paren-mode)
-(ido-mode)
+;;(ido-mode)
 (abbrev-mode)
 (menu-bar-mode 0)
 (blink-cursor-mode t)
-;;(auto-complete-mode 0)
-;;(global-auto-complete-mode 0)
+;; (auto-complete-mode 0)
+;; (global-auto-complete-mode 0)
 (global-font-lock-mode t)
 (global-display-line-numbers-mode t)
 (windmove-default-keybindings)
@@ -90,16 +94,16 @@
 
 ;;Keybindings
 ;;Simpleclip keybinding
-(global-set-key (kbd "C-C C-w") 'simpleclip-cup)
-(global-set-key (kbd "C-C M-w") 'simpleclip-copy)
+(global-set-key (kbd "C-C C-w") 'simpleclip-copy)
 (global-set-key (kbd "C-C C-y") 'simpleclip-paste)
 ;;Navigation keybindings
-(global-set-key (kbd "C-C C-g") 'goto-line)
+(global-set-key (kbd "C-x C-g") 'goto-line)
 (global-set-key (kbd "M-z") 'visual-line-mode)
 ;;Search
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-S-s") 'query-replace-regexp)
+(global-set-key (kbd "C-M-s") 'query-replace-regexp)
+(global-set-key (kbd "C-S-s") 'rgrep)
 ;;Comments
 (global-set-key (kbd "C-C ;") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
@@ -136,7 +140,8 @@
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(custom-safe-themes
-   '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
+   '("c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
+ '(global-whitespace-mode nil)
  '(package-selected-packages
    '(ein python-black systemd lua-mode docker-compose-mode dockerfile-mode solarized-theme magit markdown-mode simpleclip cmake-mode auto-complete))
  '(solarized-high-contrast-mode-line t))
