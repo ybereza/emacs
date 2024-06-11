@@ -13,3 +13,6 @@
     "Revert buffer without confirmation."
     (interactive)
     (revert-buffer :ignore-auto :noconfirm))
+(defun unload-theme()
+  (interactive)
+  (call-interactively 'disable-theme))

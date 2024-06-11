@@ -91,6 +91,7 @@
 (load "~/emacs/rc/emacs-rc-python.el")
 (load "~/emacs/rc/emacs-rc-lua.el")
 (load "~/emacs/rc/emacs-rc-custom.el")
+(load "~/emacs/rc/emacs-rc-go.el")
 
 ;;Keybindings
 ;;Simpleclip keybinding
@@ -129,23 +130,13 @@
       (setq mac-option-modifier 'meta)
       (set-face-attribute 'default nil :font "JetBrains Mono-16"))
     (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'default nil :font "JetBrains Mono-18")
-      (load-theme 'solarized-light-high-contrast t))))
-
+      (set-face-attribute 'default nil :font "Ubuntu Mono-16"))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
- '(custom-safe-themes
-   '("c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
- '(global-whitespace-mode nil)
- '(package-selected-packages
-   '(ein python-black systemd lua-mode docker-compose-mode dockerfile-mode solarized-theme magit markdown-mode simpleclip cmake-mode auto-complete))
- '(solarized-high-contrast-mode-line t))
-(put 'dired-find-alternate-file 'disabled nil)
+ '(package-selected-packages '(go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
