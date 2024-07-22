@@ -15,3 +15,4 @@
   (setq tab-width 4))
 
 (add-hook 'python-mode-hook 'my-python-mode-hook)
+(add-hook 'python-mode-hook 'lsp-deferred)
