@@ -9,7 +9,7 @@
 (let ((default-directory "~/emacs/packages/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(setq exec-path (append exec-path '("/Users/y.bereza/go/bin")))
+(setq exec-path (append exec-path '("/Users/y.bereza/go/bin") '("/Users/y.bereza/.pyenv/shims")))
 
 ;;History
 (require 'savehist)
@@ -32,6 +32,10 @@
 
 ;;Autocomplete
 ;;(require 'auto-complete)
+
+;;env vars
+(require 'load-env-vars)
+(load-env-vars "~/emacs/.env")
 
 ;;system clipboard. use shift-insert to paste from windows/mac clipboard
 (require 'simpleclip)
@@ -131,6 +135,6 @@
     (when (eq system-type 'darwin)
       (setq mac-command-modifier 'meta)
       (setq mac-option-modifier 'meta)
-      (set-face-attribute 'default nil :font "JetBrains Mono-16"))
+      (set-face-attribute 'default nil :font "Consolas-16"))
     (when (eq system-type 'gnu/linux)
       (set-face-attribute 'default nil :font "Ubuntu Mono-16"))))
