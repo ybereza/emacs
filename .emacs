@@ -67,6 +67,7 @@
 ;; (setq ido-everywhere t)
 (setq-default truncate-lines t)
 (setq-default magit-log-margin '(t "%Y-%m-%d " magit-log-margin-width t 18))
+(setq custom-file "~/emacs/custom.el")
 
 (put 'eval-expression 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -126,23 +127,10 @@
     (scroll-bar-mode -1)
     (tool-bar-mode -1)
     (when (eq system-type 'windows-nt)
-      (set-face-attribute 'default nil :font "JetBrains Mono-16"))
+      (set-face-attribute 'default nil :font "Cascadia Mono-14"))
     (when (eq system-type 'darwin)
       (setq mac-command-modifier 'meta)
       (setq mac-option-modifier 'meta)
       (set-face-attribute 'default nil :font "JetBrains Mono-16"))
     (when (eq system-type 'gnu/linux)
       (set-face-attribute 'default nil :font "Ubuntu Mono-16"))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(pyenv-mode lsp-mode go-mode)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(put 'dired-find-alternate-file 'disabled nil)
