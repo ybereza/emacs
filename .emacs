@@ -9,8 +9,6 @@
 (let ((default-directory "~/emacs/packages/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(setq exec-path (append exec-path '("/Users/y.bereza/go/bin") '("/Users/y.bereza/.pyenv/shims")))
-
 ;;History
 (require 'savehist)
 (require 'recentf)
@@ -29,13 +27,6 @@
 (setq auto-save-file-name-transforms
       `((".*" ,user-temporary-file-directory t)))
 (make-directory user-temporary-file-directory t)
-
-;;Autocomplete
-;;(require 'auto-complete)
-
-;;env vars
-(require 'load-env-vars)
-(load-env-vars "~/emacs/.env")
 
 ;;system clipboard. use shift-insert to paste from windows/mac clipboard
 (require 'simpleclip)
@@ -138,3 +129,5 @@
       (set-face-attribute 'default nil :font "Consolas-16"))
     (when (eq system-type 'gnu/linux)
       (set-face-attribute 'default nil :font "Ubuntu Mono-16"))))
+
+(load-file custom-file)
