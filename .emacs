@@ -1,22 +1,28 @@
-;;Packages repos
+;; Packages repos
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives
                '("melpa" . "https://melpa.org/packages/"))
   (package-initialize))
 
-;;Local packages
+;; Local packages
 (let ((default-directory "~/emacs/packages/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-;;History
+;; Solarized package with themes
+(require 'solarized)
+
+;; History
 (require 'savehist)
 (require 'recentf)
 (setq recentf-max-menu-items 25)
-;;(savehist-load)
+;; save recent opened files
 (recentf-mode 1)
+;; save cursor position in files
+(save-place-mode 1)
 
-;;Temporary Files
+
+;; Temporary Files
 (defvar user-temporary-file-directory "~/tmp")
 (setq backup-by-copying t)
 (setq backup-directory-alist
@@ -38,6 +44,7 @@
 
 (setenv "LANG" "ru_RU.UTF-8")
 
+(setq use-dilog-box nil)
 (setq frame-title-format "%b - %f")
 (setq inhibit-startup-message t)
 (setq mark-even-if-inactive t)
