@@ -129,7 +129,7 @@
     (scroll-bar-mode -1)
     (tool-bar-mode -1)
     (when (eq system-type 'windows-nt)
-      (set-face-attribute 'default nil :font "Cascadia Mono-14"))
+      (set-face-attribute 'default nil :font "Consolas-14"))
     (when (eq system-type 'darwin)
       (setq mac-command-modifier 'meta)
       (setq mac-option-modifier 'meta)
