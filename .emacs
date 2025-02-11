@@ -135,6 +135,6 @@
       (setq mac-option-modifier 'meta)
       (set-face-attribute 'default nil :font "Consolas-16"))
     (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'default nil :font "Ubuntu Mono-16"))))
+      (set-face-attribute 'default nil :font "monospace-14"))))
 
 (load-file custom-file)
