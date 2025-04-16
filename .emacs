@@ -12,6 +12,9 @@
 ;; Solarized package with themes
 (require 'solarized)
 
+;; git-link for coping links to gitlab repos
+(require 'git-link)
+
 ;; History
 (require 'savehist)
 (require 'recentf)
@@ -65,11 +68,16 @@
 (setq kill-whole-line t)
 (setq indent-tabs-mode nil)
 (setq ring-bell-function 'ignore)
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-everywhere t)
 (setq-default truncate-lines t)
 (setq-default magit-log-margin '(t "%Y-%m-%d " magit-log-margin-width t 18))
 (setq custom-file "~/emacs/custom.el")
+
+;; git-link
+(setq git-link-open-in-browser t)
+(setq git-link-add-to-kill-ring nil)
+
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
 
 (put 'eval-expression 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -81,15 +89,16 @@
 (ffap-bindings)
 (transient-mark-mode)
 (show-paren-mode)
-;;(ido-mode)
 (abbrev-mode)
 (menu-bar-mode 0)
 (blink-cursor-mode t)
+(global-font-lock-mode t)
+(global-display-line-numbers-mode nil)
+(windmove-default-keybindings)
+
+;; (ido-mode)
 ;; (auto-complete-mode 0)
 ;; (global-auto-complete-mode 0)
-(global-font-lock-mode t)
-(global-display-line-numbers-mode t)
-(windmove-default-keybindings)
 
 (load "~/emacs/rc/emacs-rc-ccmode.el")
 (load "~/emacs/rc/emacs-rc-cmake.el")
@@ -98,30 +107,32 @@
 (load "~/emacs/rc/emacs-rc-custom.el")
 (load "~/emacs/rc/emacs-rc-go.el")
 
-;;Keybindings
-;;Simpleclip keybinding
+;; Keybindings
+;; Simpleclip keybinding
 (global-set-key (kbd "C-C C-w") 'simpleclip-copy)
 (global-set-key (kbd "C-C C-y") 'simpleclip-paste)
-;;Navigation keybindings
+;; Navigation keybindings
 (global-set-key (kbd "C-x C-g") 'goto-line)
 (global-set-key (kbd "M-z") 'visual-line-mode)
-;;Search
+;; Search
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'query-replace-regexp)
 (global-set-key (kbd "C-S-s") 'rgrep)
-;;Comments
+;; Comments
 (global-set-key (kbd "C-C ;") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
-;;Misc
+;; Misc
 (global-set-key (kbd "C-C C-SPC") 'global-whitespace-mode)
 (global-set-key (kbd "C-c z") 'show-file-name)
 (global-set-key (kbd "<f5>") 'revert-buffer-no-confirm)
-;;Switch windows
+;; Switch windows
 (global-set-key [M-left] 'windmove-left)
 (global-set-key [M-right] 'windmove-right)
 (global-set-key [M-up] 'windmove-up)
 (global-set-key [M-down] 'windmove-down)
+;; git-link
+(global-set-key (kbd "C-c g l") 'git-link)
 
 ;;GUI specific settings
 (when (fboundp 'window-system)
@@ -138,3 +149,4 @@
       (set-face-attribute 'default nil :font "monospace-14"))))
 
 (load-file custom-file)
+(put 'dired-find-alternate-file 'disabled nil)
