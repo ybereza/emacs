@@ -136,7 +136,7 @@
 (global-set-key [M-up] 'windmove-up)
 (global-set-key [M-down] 'windmove-down)
 ;; git-link
-(global-set-key (kbd "C-c g l") 'git-link)
+(global-set-key (kbd "C-c g p") 'git-link)
 
 ;;GUI specific settings
 (when (fboundp 'window-system)
