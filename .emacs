@@ -9,6 +9,12 @@
 (let ((default-directory "~/emacs/packages/"))
   (normal-top-level-add-subdirs-to-load-path))
 
+;; try to fucking set this environment variables
+(setenv "PATH" (concat (getenv "PATH") ":/opt/go/bin:/opt/llvm/bin:/home/ybereza/go/bin"))
+(add-to-list 'exec-path "/opt/go/bin")
+(add-to-list 'exec-path "/opt/llvm/bin")
+(add-to-list 'exec-path "/home/ybereza/go/bin")
+
 ;; Solarized package with themes
 (require 'solarized)
 
@@ -70,14 +76,12 @@
 (setq ring-bell-function 'ignore)
 (setq-default truncate-lines t)
 (setq-default magit-log-margin '(t "%Y-%m-%d " magit-log-margin-width t 18))
+
 (setq custom-file "~/emacs/custom.el")
 
 ;; git-link
 (setq git-link-open-in-browser t)
 (setq git-link-add-to-kill-ring nil)
-
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-everywhere t)
 
 (put 'eval-expression 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -96,9 +100,9 @@
 (global-display-line-numbers-mode nil)
 (windmove-default-keybindings)
 
-;; (ido-mode)
-;; (auto-complete-mode 0)
-;; (global-auto-complete-mode 0)
+(global-font-lock-mode t)
+(global-display-line-numbers-mode 0)
+(windmove-default-keybindings)
 
 (load "~/emacs/rc/emacs-rc-ccmode.el")
 (load "~/emacs/rc/emacs-rc-cmake.el")
@@ -146,7 +150,10 @@
       (setq mac-option-modifier 'meta)
       (set-face-attribute 'default nil :font "Consolas-16"))
     (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'default nil :font "monospace-14"))))
+      (set-face-attribute 'default nil :font "monospace-12"))))
+
+(setq solarized-use-variable-pitch nil
+      solarized-scale-org-headlines nil)
 
 (load-file custom-file)
 (put 'dired-find-alternate-file 'disabled nil)
