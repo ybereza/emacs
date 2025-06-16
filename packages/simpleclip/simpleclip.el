@@ -193,7 +193,8 @@
 
 If nil, use default logic to get clipboard content according to OS.
 
-If non-nil, use the output of executing the provider program as clipboard content."
+If non-nil, use the output of executing the provider program
+as clipboard content."
    :type 'string
    :group 'simpleclip)
 
@@ -361,7 +362,7 @@ in GNU Emacs 24.1 or higher."
           ((memq system-type '(gnu gnu/linux gnu/kfreebsd))
            (with-output-to-string
              (with-current-buffer standard-output
-               (if (string= (getenv "XDG_SESSION_TYPE") "wayland")
+               (if (eq (getenv "XDG_SESSION_TYPE") 'wayland)
                    (call-process "wl-paste" nil t nil)
                  (call-process "xsel" nil t nil "--clipboard" "--output")))))
           (t
@@ -403,7 +404,7 @@ in GNU Emacs 24.1 or higher."
            ((memq system-type '(gnu gnu/linux gnu/kfreebsd))
             (with-temp-buffer
               (insert str-val)
-               (if (string= (getenv "XDG_SESSION_TYPE") "wayland")
+               (if (eq (getenv "XDG_SESSION_TYPE") 'wayland)
                   (call-process "wl-copy" nil t nil)
                 (call-process-region (point-min) (point-max) "xsel" nil nil nil "--clipboard" "--input"))))
            (t
@@ -423,7 +424,7 @@ if the argument is positive and otherwise disables the mode.
 
 When called from Lisp, this command enables the mode if the
 argument is omitted or nil, and toggles the mode if the argument
-is 'toggle."
+is \\='toggle."
   :group 'simpleclip
   :global t
   (cond

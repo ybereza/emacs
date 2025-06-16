@@ -30,6 +30,8 @@
 ;; save cursor position in files
 (save-place-mode 1)
 
+(ido-mode 1)
+(ido-everywhere 1)
 
 ;; Temporary Files
 (defvar user-temporary-file-directory "~/tmp")
@@ -124,7 +126,7 @@
 (global-set-key (kbd "C-M-s") 'query-replace-regexp)
 (global-set-key (kbd "C-S-s") 'rgrep)
 ;; Comments
-(global-set-key (kbd "C-C ;") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-C C-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
 ;; Misc
 (global-set-key (kbd "C-C C-SPC") 'global-whitespace-mode)

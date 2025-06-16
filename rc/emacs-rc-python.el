@@ -15,11 +15,3 @@
   (setq tab-width 4))
 
 (add-hook 'python-mode-hook 'my-python-mode-hook)
-
-(use-package lsp-pyright
-  :ensure t
-  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
-;; (add-hook 'go-mode-hook 'eglot-ensure)
