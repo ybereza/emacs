@@ -53,7 +53,9 @@
 (setq user-full-name "Yury Bereza")
 (setq user-mail-address "ybereza@gmail.com")
 
-(setenv "LANG" "ru_RU.UTF-8")
+(setenv "LANG" "en_US.UTF-8")
+
+(add-to-list 'default-frame-alist '(undecorated . t))
 
 (setq use-dilog-box nil)
 (setq frame-title-format "%b - %f")
@@ -152,7 +154,7 @@
       (setq mac-option-modifier 'meta)
       (set-face-attribute 'default nil :font "Consolas-16"))
     (when (eq system-type 'gnu/linux)
-      (set-face-attribute 'default nil :font "monospace-12"))))
+      (set-face-attribute 'default nil :font "monospace-13"))))
 
 (setq solarized-use-variable-pitch nil
       solarized-scale-org-headlines nil)
