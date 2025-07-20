@@ -55,7 +55,9 @@
 
 (setenv "LANG" "en_US.UTF-8")
 
+;; Maximized without borders
 (add-to-list 'default-frame-alist '(undecorated . t))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (setq use-dilog-box nil)
 (setq frame-title-format "%b - %f")
