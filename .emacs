@@ -129,6 +129,8 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'query-replace-regexp)
 (global-set-key (kbd "C-S-s") 'rgrep)
+;; TAGS
+(global-set-key (kbd "C-C C-t") 'visit-tags-table)
 ;; Comments
 (global-set-key (kbd "C-C C-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-C C-u") 'uncomment-region)
