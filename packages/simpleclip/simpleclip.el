@@ -362,7 +362,7 @@ in GNU Emacs 24.1 or higher."
           ((memq system-type '(gnu gnu/linux gnu/kfreebsd))
            (with-output-to-string
              (with-current-buffer standard-output
-               (if (eq (getenv "XDG_SESSION_TYPE") 'wayland)
+               (if (string-equal (getenv "XDG_SESSION_TYPE") "wayland")
                    (call-process "wl-paste" nil t nil)
                  (call-process "xsel" nil t nil "--clipboard" "--output")))))
           (t
